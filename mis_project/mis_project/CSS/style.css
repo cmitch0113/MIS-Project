@@ -1,0 +1,228 @@
+/* style.css */
+
+/* ===== VARIABLES ===== */
+:root {
+    --primary-color: #7a0019;    /* UMD Maroon */
+    --secondary-color: #ffcc33;  /* UMD Gold */
+    --text-color: #333;
+    --background-color: #fff;
+    --gray: #f4f4f4;
+}
+
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    background-color: var(--primary-color);
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin: 2rem 0 1rem 0;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+/* Mobile phones */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    nav ul {
+        gap: 1rem;
+    }
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: var(--gray);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+.resume-header {
+    background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.resume-actions {
+    margin-top: 2rem;
+}
+
+.download-btn {
+    background: white;
+    color: #1a237e;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.resume-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.resume-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1a237e;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    padding: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+.date {
+    color: #1a237e;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.achievements, .responsibilities {
+    list-style: none;
+    padding-left: 1.5rem;
+}
+
+.achievements li, .responsibilities li {
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.achievements li:before, .responsibilities li:before {
+    content: "→";
+    position: absolute;
+    left: -1.5rem;
+    color: #1a237e;
+}
+
+.skills-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.skill-bar {
+    margin-bottom: 1rem;
+}
+
+.skill-name {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #1a237e;
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .resume-section {
+        padding: 1rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
