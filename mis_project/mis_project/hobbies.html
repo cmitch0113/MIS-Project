@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Carson Mitchell | My Hobbies - Friends, Sports, Outdoors, and Poker">
+    <title>Carson Mitchell | Hobbies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .hobbies-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 8rem 2rem 4rem;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hobbies-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
+            z-index: 0;
+        }
+
+        .hobbies-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hobbies-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hobbies-hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .hobby-section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .hobby-section:nth-child(even) {
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        .hobby-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hobby-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hobby-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .hobby-icon {
+            font-size: 2.5rem;
+        }
+
+        .hobby-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .hobby-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .hobby-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .hobby-card-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .hobby-card:hover .hobby-card-image {
+            transform: scale(1.05);
+        }
+
+        .hobby-card-content {
+            padding: 2rem;
+        }
+
+        .hobby-card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .hobby-card-text {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .sports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .sport-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .sport-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.2);
+        }
+
+        .sport-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .sport-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .sport-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .poker-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hobby-section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .hobby-content,
+            .sports-grid,
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .hobby-section {
+                padding: 4rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar" aria-label="Primary">
+        <div class="nav-container">
+            <div class="logo" aria-label="Site logo">
+                <span class="logo-icon">📈</span>
+                <span class="logo-text">Carson Mitchell</span>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="hobbies.html" class="active">Hobbies</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="discover.html">Discover UMD</a></li>
+                <li><a href="game.html">Game</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hobbies-hero">
+        <div class="hobbies-hero-content">
+            <h1>My Hobbies</h1>
+            <p>Life is about balance. When I'm not focused on my studies and career, I enjoy spending time with friends, watching sports, exploring the outdoors, and playing poker. These activities keep me grounded and energized.</p>
+        </div>
+    </section>
+
+    <!-- Hanging with Friends Section -->
+    <section class="hobby-section" id="friends">
+        <div class="hobby-container">
+            <div class="hobby-header">
+                <h2 class="hobby-title">
+                    <span class="hobby-icon">👥</span>
+                    Hanging with Friends
+                </h2>
+                <p class="hobby-description">
+                    Nothing beats quality time with good friends. Whether we're grabbing food, watching games together, or just hanging out, these moments create the best memories and keep life fun and balanced.
+                </p>
+            </div>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="Images/IMG.6.jpg" alt="Hanging out with friends">
+                </div>
+                <div class="gallery-item">
+                    <img src="Images/IMAGE.JPG" alt="Friends gathering">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Watching Sports Section -->
+    <section class="hobby-section" id="sports">
+        <div class="hobby-container">
+            <div class="hobby-header">
+                <h2 class="hobby-title">
+                    <span class="hobby-icon">🏈</span>
+                    Watching Sports
+                </h2>
+                <p class="hobby-description">
+                    I'm a huge sports fan and love following NFL, UFC, and MLB. There's something thrilling about the strategy, athleticism, and unpredictability of professional sports. Whether it's Sunday football, a UFC fight night, or a baseball game, I'm always tuned in.
+                </p>
+            </div>
+            <div class="sports-grid">
+                <div class="sport-card">
+                    <div class="sport-icon">🏈</div>
+                    <h3 class="sport-name">NFL</h3>
+                    <p class="sport-description">Following every game, analyzing plays, and enjoying the intensity of professional football.</p>
+                </div>
+                <div class="sport-card">
+                    <div class="sport-icon">🥊</div>
+                    <h3 class="sport-name">UFC</h3>
+                    <p class="sport-description">The raw skill and strategy of mixed martial arts - every fight is a masterclass in technique.</p>
+                </div>
+                <div class="sport-card">
+                    <div class="sport-icon">⚾</div>
+                    <h3 class="sport-name">MLB</h3>
+                    <p class="sport-description">America's pastime - the strategy, the stats, and the excitement of every pitch and swing.</p>
+                </div>
+            </div>
+            <div class="image-gallery" style="margin-top: 3rem;">
+                <div class="gallery-item">
+                    <img src="Images/IMG.4.jpg" alt="Sports viewing">
+                </div>
+                <div class="gallery-item">
+                    <img src="Images/IMG.5.jpg" alt="Watching games">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Outside Section -->
+    <section class="hobby-section" id="outdoors">
+        <div class="hobby-container">
+            <div class="hobby-header">
+                <h2 class="hobby-title">
+                    <span class="hobby-icon">🌲</span>
+                    Getting Outside
+                </h2>
+                <p class="hobby-description">
+                    Fresh air, nature, and adventure - getting outside is essential for my well-being. Whether it's hiking, exploring new trails, or just enjoying the great outdoors, these experiences help me recharge and stay connected to the world around me.
+                </p>
+            </div>
+            <div class="hobby-content">
+                <div class="hobby-card">
+                    <img src="Images/IMG.1.jpg" alt="Outdoor adventure" class="hobby-card-image">
+                    <div class="hobby-card-content">
+                        <h3 class="hobby-card-title">Nature Exploration</h3>
+                        <p class="hobby-card-text">Discovering new trails and scenic spots that Minnesota has to offer.</p>
+                    </div>
+                </div>
+                <div class="hobby-card">
+                    <img src="Images/IMG.3.JPG" alt="Outdoor activities" class="hobby-card-image">
+                    <div class="hobby-card-content">
+                        <h3 class="hobby-card-title">Adventure Time</h3>
+                        <p class="hobby-card-text">Embracing the outdoors for fresh perspectives and active living.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Playing Poker Section -->
+    <section class="hobby-section" id="poker">
+        <div class="hobby-container">
+            <div class="hobby-header">
+                <h2 class="hobby-title">
+                    <span class="hobby-icon">🃏</span>
+                    Playing Poker
+                </h2>
+                <p class="hobby-description">
+                    Poker combines strategy, psychology, and calculated risk-taking - skills that translate well to both finance and life. I enjoy the mental challenge, reading opponents, and the thrill of making the right decision at the right time.
+                </p>
+            </div>
+            <div class="hobby-content">
+                <div class="hobby-card">
+                    <img src="Images/IMG.6.png" alt="Poker game" class="hobby-card-image">
+                    <div class="hobby-card-content">
+                        <h3 class="hobby-card-title">Strategic Thinking</h3>
+                        <p class="hobby-card-text">Poker teaches patience, probability, and reading people - skills that enhance both personal and professional decision-making.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="poker-stats">
+                <div class="stat-card">
+                    <div class="stat-value">♠️</div>
+                    <div class="stat-label">Strategy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">🎯</div>
+                    <div class="stat-label">Focus</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">🧠</div>
+                    <div class="stat-label">Psychology</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">⚡</div>
+                    <div class="stat-label">Thrill</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Carson Mitchell</h3>
+                    <p>Financial Planning • UMD</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="hobbies.html">Hobbies</a></li>
+                        <li><a href="career.html">Career</a></li>
+                        <li><a href="discover.html">Discover UMD</a></li>
+                        <li><a href="game.html">Game</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: mitc1305@d.umn.edu</p>
+                    <p>University: University of Minnesota Duluth</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Carson Mitchell. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

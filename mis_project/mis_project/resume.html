@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carson Mitchell | Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="resume.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">📈</span>
+                <span class="logo-text">Carson Mitchell</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html" class="active">Resume</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="discover.html">Discover UMD</a></li>
+                <li><a href="game.html">Game</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Resume Header -->
+    <section class="resume-header">
+        <div class="container">
+            <h1>Professional Resume</h1>
+            <div class="resume-actions">
+                <button class="download-btn" onclick="window.open('files/2025_Resume.pdf')">
+                    <span class="icon">📄</span> Download PDF
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Resume Content -->
+    <section class="resume-content">
+        <div class="container">
+            <!-- Education Section -->
+            <div class="resume-section" data-aos="fade-up">
+                <h2><span class="icon">🎓</span> Education</h2>
+                <div class="card">
+                    <h3>University of Minnesota Duluth</h3>
+                    <p class="subtitle">Bachelor of Business Administration - Financial Planning</p>
+                    <p class="date">Expected Graduation: Spring 2026</p>
+                    <ul class="achievements">
+                        <li>GPA: 3.2/4.0</li>
+                        <li>Dean's List Recognition</li>
+                        <li>Financial Planning Club Member</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Experience Section -->
+            <div class="resume-section" data-aos="fade-up">
+                <h2><span class="icon">💼</span> Professional Experience</h2>
+                <div class="card">
+                    <h3>Financial Planning Intern</h3>
+                    <p class="subtitle">MD Financial Services</p>
+                    <p class="date">Summer 2024</p>
+                    <ul class="responsibilities">
+                        <li>Assisted in developing comprehensive financial plans</li>
+                        <li>Conducted market research and analysis</li>
+                        <li>Participated in client meetings and presentations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="resume-section" data-aos="fade-up">
+                <h2><span class="icon">🎯</span> Skills & Certifications</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <span class="skill-name">Financial Analysis</span>
+                                <div class="progress-bar" style="width: 90%"></div>
+                            </div>
+                            <div class="skill-bar">
+                                <span class="skill-name">Investment Planning</span>
+                                <div class="progress-bar" style="width: 85%"></div>
+                            </div>
+                            <div class="skill-bar">
+                                <span class="skill-name">Risk Management</span>
+                                <div class="progress-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leadership Section -->
+            <div class="resume-section" data-aos="fade-up">
+                <h2><span class="icon">👥</span> Leadership & Activities</h2>
+                <div class="card">
+                    <h3>Financial Planning Club</h3>
+                    <p class="subtitle">Vice President</p>
+                    <p class="date">2025 - Present</p>
+                    <ul class="achievements">
+                        <li>Organized financial literacy workshops</li>
+                        <li>Led team of 5 students in investment competitions</li>
+                        <li>Coordinated networking events with industry professionals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Carson Mitchell. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            offset: 100
+        });
+    </script>
+</body>
+</html><!-- Add this section after the Resume Header section -->
+<section class="resume-image-section">
+    <div class="container">
+        <div class="resume-preview">
+            <img src="images/2025 Resume.jpg" alt="Carson Mitchell's Resume" class="resume-img">
+            <div class="resume-overlay">
+                <button class="view-full-btn" onclick="openFullImage()">
+                    <span class="icon">🔍</span> View Full Size
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add this script before the closing body tag -->
+<script>
+    // ...existing AOS initialization code...
+    
+    function openFullImage() {
+        window.open('images/2025 Resume.jpg', '_blank');
+    }
+</script>
